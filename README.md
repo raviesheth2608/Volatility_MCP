@@ -6,6 +6,7 @@ A timeout-proof Volatility 3 MCP server for Claude Desktop with a background job
 A **timeout-proof Volatility 3 MCP server** for Claude Desktop using a **background job engine**.
 
 This allows Claude to run:
+- pslist, psscan , pstree, netscan 
 - Malfind
 - YARA
 - Netscan
