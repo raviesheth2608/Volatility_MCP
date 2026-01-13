@@ -1,78 +1,153 @@
-# Claude + MCP + Volatility 3 = AI-powered Windows Memory Forensics
-A timeout-proof Volatility 3 MCP server for Claude Desktop with a background job engine, enabling long-running memory forensics, malware detection, YARA scanning, and DFIR workflows without hitting Claude’s 4-minute tool limit.
+# 🧠 Claude + MCP + Volatility 3  
+### AI-Powered Windows Memory Forensics
 
-# Volatility MCP – Claude Desktop DFIR Server
-
-A **timeout-proof Volatility 3 MCP server** for Claude Desktop using a **background job engine**.
-
-This allows Claude to run:
-- pslist, psscan , pstree, netscan 
-- Malfind
-- YARA
-- Netscan
-- Autoruns
-- Rootkit detection
-- Full memory forensics
-
-without hitting Claude Desktop’s 4-minute tool execution limit.
+A **timeout-proof Volatility 3 MCP server** for **Claude Desktop** that enables **long-running memory forensics, malware hunting, YARA scanning, and DFIR workflows** without hitting Claude’s 4-minute tool execution limit.
 
 ---
 
-## 🚀 Features
+# 🔥 Volatility MCP – Claude Desktop DFIR Server
 
-- Runs **30–60 minute Volatility scans** without timeout
-- Background job engine (submit → poll → fetch)
-- Works on Windows
-- Compatible with Claude Desktop MCP
-- Supports all major Volatility 3 plugins
+This project connects **Claude Desktop** to **Volatility 3** using the **Model Context Protocol (MCP)** so Claude can directly analyze Windows memory dumps.
+
+It allows Claude to run:
+
+- pslist, psscan, pstree, cmdline  
+- malfind  
+- netscan  
+- autoruns  
+- dlllist, ldrmodules  
+- rootkit detection  
+- YARA scanning  
+- full DFIR memory workflows  
+
+…without timing out.
 
 ---
 
-## 🛠 Installation
+# 🚀 Features
 
-- 1️⃣ Install Python
-Download Python from
-👉 https://www.python.org/downloads/windows/
-During installation:
-✅ Check “Add Python to PATH”
-✅ Check “Install pip”
-Verify in CMD
+- Runs **30–60 minute Volatility scans** without Claude timing out  
+- Works on **Windows**  
+- Integrates directly with **Claude Desktop MCP**  
+- Supports **all major Volatility 3 plugins**  
+- Malware detection, network forensics, persistence, rootkits, YARA  
+
+---
+
+# 🛠 System Requirements
+
+| Component | Required |
+|--------|----------|
+| Windows | Windows 10 / 11 |
+| Python | 3.10+ |
+| Claude Desktop | Latest |
+| Git | Installed |
+| Memory Dump | `.mem`, `.raw`, `.dmp` |
+
+---
+
+# 📦 Installation (Windows)
+
+## 1️⃣ Install Python
+
+Download  
+https://www.python.org/downloads/windows/
+
+During install:
+- ✔ Add Python to PATH  
+- ✔ Install pip  
+
+Verify:
+```cmd
 python --version
 pip --version
+```
 
-- 2️⃣ Install Git
-Download from
-👉 https://git-scm.com/downloads
--Verify in CMD: git --version
+---
 
-- 3️⃣ Clone the Repository
-- in CMD
-- cd C:\
-- git clone https://github.com/YOURNAME/volatility-mcp.git
-- cd volatility-mcp
+## 2️⃣ Install Git
 
-- 4️⃣ Create Python Virtual Environment
-- in CMD (C:\Volatility_MCP)
-- python -m venv venv
-- venv\Scripts\activate
--You should see:(venv)
+Download  
+https://git-scm.com/downloads
 
-- 5️⃣ Install Dependencies
-- insind <vnev>
-- pip install --upgrade pip
-- pip install mcp volatility3 yara-python
-- pip list
-You must see:
--volatility3
--mcp
--veryify with this command (C:\volatility-mcp\venv\Scripts\vol.exe -h)
+Verify:
+```cmd
+git --version
+```
 
-- 6️⃣ Add Your Memory Dump at specific location
+---
 
-- 7️⃣ Configure Claude Desktop MCP (download from: https://claude.com/download)
-- location of .json file
-- in my case it is : C:\Users\nameofuser\AppData\Roaming\Claude\claude_desktop_config.json
-- update the json file with follwing code
+## 3️⃣ Clone Repository
+
+```cmd
+cd C:\
+git clone https://github.com/YOURNAME/volatility-mcp.git
+cd volatility-mcp
+```
+
+---
+
+## 4️⃣ Create Virtual Environment
+
+```cmd
+python -m venv venv
+venv\Scripts\activate
+```
+
+You should see:
+```
+(venv)
+```
+
+---
+
+## 5️⃣ Install Dependencies
+
+```cmd
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Verify:
+```cmd
+pip list
+```
+
+You should see:
+- volatility3  
+- mcp  
+- fastmcp  
+- yara-python  
+
+Test Volatility:
+```cmd
+C:\volatility-mcp\venv\Scripts\vol.exe -h
+```
+
+---
+
+## 6️⃣ Add Memory Dump
+
+Place your memory image here:
+```
+C:\volatility-mcp\memdump.mem
+```
+
+---
+
+# 🧩 Claude Desktop MCP Configuration
+
+Install Claude Desktop  
+https://claude.com/download  
+
+Open:
+```
+C:\Users\YOURNAME\AppData\Roaming\Claude\claude_desktop_config.json
+```
+
+Add:
+
+```json
 {
   "mcpServers": {
     "volatility": {
@@ -84,23 +159,113 @@ You must see:
     }
   }
 }
-Save → Restart Claude Desktop.
-close it and restart your PC/Laptop 
+```
 
-- 8️⃣ Open CMD
-First start the server.py file
-C:\Volatility_MCP\python server.py
+Save → Close Claude → Restart Windows → Open Claude
 
-- 9️⃣ Open claude desktop application and wait for few seconds 
-opne file-> Settings-> developer (If everything is ok -> You can see volatility server is running)
+---
 
-- 🔟 open chat and start process for memory annlysis: best prompt : 
+# ▶ Start MCP Server
 
-- Run windows.info and windows.pslist on the memory dump located at C:\Volatility_MCP\memdump.mem
-- Run windows.pstree, windows.cmdline, and windows.psscan on C:\Volatility_MCP\memdump.mem
-- Run windows.malfind on C:\Volatility_MCP\memdump.mem
-- Run windows.dlllist on C:\Volatility_MCP\memdump.mem
+```cmd
+cd C:\volatility-mcp
+venv\Scripts\activate
+python server.py
+```
 
+You should see:
+```
+Volatility MCP Server running
+```
 
+---
 
+# 🔌 Verify in Claude
 
+Claude Desktop →  
+Settings → Developer  
+
+You should see:
+```
+volatility   ✔ Connected
+```
+
+---
+
+# 🧠 Claude Prompts
+
+System info:
+```
+Run windows.info and windows.pslist on C:\volatility-mcp\memdump.mem
+```
+
+Process tree:
+```
+Run windows.pstree, windows.cmdline, and windows.psscan on C:\volatility-mcp\memdump.mem
+```
+
+Malware:
+```
+Run windows.malfind on C:\volatility-mcp\memdump.mem
+```
+
+DLLs:
+```
+Run windows.dlllist on C:\volatility-mcp\memdump.mem
+```
+
+Network:
+```
+Run windows.netscan on C:\volatility-mcp\memdump.mem
+```
+
+Persistence:
+```
+Run windows.autoruns on C:\volatility-mcp\memdump.mem
+```
+
+YARA:
+```
+Run windows.yarascan with my YARA rule on C:\volatility-mcp\memdump.mem
+```
+
+---
+
+# 🧪 Manual Volatility Test
+
+```cmd
+C:\volatility-mcp\venv\Scripts\vol.exe -f C:\volatility-mcp\memdump.mem windows.info
+```
+
+If this works → MCP will work.
+
+---
+
+# 📦 requirements.txt
+
+```
+mcp
+fastmcp
+volatility3
+yara-python
+pefile
+capstone
+psutil
+requests
+rich
+```
+
+---
+
+# 🛡 What You Built
+
+You now have an **AI-powered memory forensics engine** where Claude acts like a:
+
+- Malware analyst  
+- DFIR investigator  
+- Threat hunter  
+- SOC analyst  
+
+inside your own Windows lab.
+
+Welcome to **AI-driven digital forensics** 🧠🔥
