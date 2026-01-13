@@ -69,7 +69,7 @@ You must see:
 
 - 6️⃣ Add Your Memory Dump at specific location
 
-- 7️⃣ Configure Claude Desktop MCP
+- 7️⃣ Configure Claude Desktop MCP (download from: https://claude.com/download)
 - location of .json file
 - in my case it is : C:\Users\nameofuser\AppData\Roaming\Claude\claude_desktop_config.json
 - update the json file with follwing code
