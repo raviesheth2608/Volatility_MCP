@@ -1,4 +1,4 @@
-# Volatility_MCP
+# Claude + MCP + Volatility 3 = AI-powered Windows Memory Forensics
 A timeout-proof Volatility 3 MCP server for Claude Desktop with a background job engine, enabling long-running memory forensics, malware detection, YARA scanning, and DFIR workflows without hitting Claude’s 4-minute tool limit.
 
 # Volatility MCP – Claude Desktop DFIR Server
