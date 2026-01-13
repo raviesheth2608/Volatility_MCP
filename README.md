@@ -161,7 +161,7 @@ Add:
 }
 ```
 
-Save → Close Claude → Restart Windows → Open Claude
+Save → Close Claude → Restart Windows
 
 ---
 
@@ -180,7 +180,7 @@ Volatility MCP Server running
 
 ---
 
-# 🔌 Verify in Claude
+# 🔌 Open Claude and Verify
 
 Claude Desktop →  
 Settings → Developer  
