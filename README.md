@@ -80,5 +80,26 @@ pip install volatility3 mcp fastmcp yara-python
   }
 }
 Save → Restart Claude Desktop.
+close it and restart your PC/Laptop 
+8️⃣ Open CMD
+First start the server.py file
+C:\Volatility_MCP\python server.py
+9️⃣
+Open claude desktop application and wait for few seconds 
+opne file-> Settings-> developer (If everything is ok -> You can see volatility server is running)
+🔟
+open chat and start process for memory annlysis
+
+best prompt : 
+
+Run windows.info and windows.pslist on the memory dump located at C:\Volatility_MCP\memdump.mem
+
+Run windows.pstree, windows.cmdline, and windows.psscan on C:\Volatility_MCP\memdump.mem
+
+Run windows.malfind on C:\Volatility_MCP\memdump.mem
+
+Run windows.dlllist on C:\Volatility_MCP\memdump.mem
+
+
 
 
