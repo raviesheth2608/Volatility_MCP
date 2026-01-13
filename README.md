@@ -30,10 +30,62 @@ without hitting Claude Desktop’s 4-minute tool execution limit.
 
 ## 🛠 Installation
 
-```bash
-git clone https://github.com/YOURNAME/volatility-mcp
+1️⃣ Install Python
+Download Python from
+👉 https://www.python.org/downloads/windows/
+During installation:
+✅ Check “Add Python to PATH”
+✅ Check “Install pip”
+Verify in CMD
+python --version
+pip --version
+
+2️⃣ Install Git
+Download from
+👉 https://git-scm.com/downloads
+Verify in CMD:
+git --version
+
+3️⃣ Clone the Repository
+in CMD
+cd C:\
+git clone https://github.com/YOURNAME/volatility-mcp.git
 cd volatility-mcp
+
+4️⃣ Create Python Virtual Environment
+in CMD
 python -m venv venv
 venv\Scripts\activate
-pip install -r requirements.txt
+You should see:
+(venv)
+
+5️⃣ Install Dependencies
+in CMD
+pip install --upgrade pip
+pip install volatility3 mcp fastmcp yara-python
+
+6️⃣ Add Your Memory Dump at specific location
+
+7️⃣ Configure Claude Desktop MCP
+
+{
+  "mcpServers": {
+    "volatility": {
+      "command": "C:\\volatility-mcp\\venv\\Scripts\\python.exe",
+      "args": [
+        "-u",
+        "C:\\volatility-mcp\\server.py"
+      ]
+    }
+  }
+}
+
+windows
+down load Volatility_MCP folder save it at C:
+open cmd and set the location C:\Volatility_MCP
+C:\Volatility_MCP python -m venv venv
+python -m venv venv
+venv\Scripts\activate
+pip install --upgrade pip
+pip install .
 
