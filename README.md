@@ -53,7 +53,7 @@ git clone https://github.com/YOURNAME/volatility-mcp.git
 cd volatility-mcp
 
 4️⃣ Create Python Virtual Environment
-- in CMD
+- in CMD (C:\Volatility_MCP)
 - python -m venv venv
 - venv\Scripts\activate
 -You should see:(venv)
@@ -66,6 +66,7 @@ cd volatility-mcp
 You must see:
 -volatility3
 -mcp
+-veryify with this command (C:\volatility-mcp\venv\Scripts\vol.exe -h)
 
 6️⃣ Add Your Memory Dump at specific location
 
