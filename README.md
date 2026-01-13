@@ -43,14 +43,13 @@ pip --version
 2️⃣ Install Git
 Download from
 👉 https://git-scm.com/downloads
-Verify in CMD:
-git --version
+-Verify in CMD: git --version
 
 3️⃣ Clone the Repository
-in CMD
-cd C:\
-git clone https://github.com/YOURNAME/volatility-mcp.git
-cd volatility-mcp
+- in CMD
+- cd C:\
+- git clone https://github.com/YOURNAME/volatility-mcp.git
+- cd volatility-mcp
 
 4️⃣ Create Python Virtual Environment
 - in CMD (C:\Volatility_MCP)
@@ -71,7 +70,9 @@ You must see:
 6️⃣ Add Your Memory Dump at specific location
 
 7️⃣ Configure Claude Desktop MCP
-
+- location of .json file
+- in my case it is : C:\Users\nameofuser\AppData\Roaming\Claude\claude_desktop_config.json
+- update the json file with follwing code
 {
   "mcpServers": {
     "volatility": {
