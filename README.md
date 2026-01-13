@@ -79,13 +79,6 @@ pip install volatility3 mcp fastmcp yara-python
     }
   }
 }
+Save → Restart Claude Desktop.
 
-windows
-down load Volatility_MCP folder save it at C:
-open cmd and set the location C:\Volatility_MCP
-C:\Volatility_MCP python -m venv venv
-python -m venv venv
-venv\Scripts\activate
-pip install --upgrade pip
-pip install .
 
