@@ -53,16 +53,19 @@ git clone https://github.com/YOURNAME/volatility-mcp.git
 cd volatility-mcp
 
 4️⃣ Create Python Virtual Environment
-in CMD
-python -m venv venv
-venv\Scripts\activate
-You should see:
-(venv)
+- in CMD
+- python -m venv venv
+- venv\Scripts\activate
+-You should see:(venv)
 
 5️⃣ Install Dependencies
-in CMD
-pip install --upgrade pip
-pip install volatility3 mcp fastmcp yara-python
+- insind <vnev>
+- pip install --upgrade pip
+- pip install mcp volatility3 yara-python
+- pip list
+You must see:
+-volatility3
+-mcp
 
 6️⃣ Add Your Memory Dump at specific location
 
