@@ -1,0 +1,9 @@
+mcp
+fastmcp
+volatility3
+yara-python
+pefile
+capstone
+psutil
+requests
+rich
