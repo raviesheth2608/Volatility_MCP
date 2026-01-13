@@ -30,7 +30,7 @@ without hitting Claude Desktop’s 4-minute tool execution limit.
 
 ## 🛠 Installation
 
-1️⃣ Install Python
+- 1️⃣ Install Python
 Download Python from
 👉 https://www.python.org/downloads/windows/
 During installation:
@@ -40,24 +40,24 @@ Verify in CMD
 python --version
 pip --version
 
-2️⃣ Install Git
+- 2️⃣ Install Git
 Download from
 👉 https://git-scm.com/downloads
 -Verify in CMD: git --version
 
-3️⃣ Clone the Repository
+- 3️⃣ Clone the Repository
 - in CMD
 - cd C:\
 - git clone https://github.com/YOURNAME/volatility-mcp.git
 - cd volatility-mcp
 
-4️⃣ Create Python Virtual Environment
+- 4️⃣ Create Python Virtual Environment
 - in CMD (C:\Volatility_MCP)
 - python -m venv venv
 - venv\Scripts\activate
 -You should see:(venv)
 
-5️⃣ Install Dependencies
+- 5️⃣ Install Dependencies
 - insind <vnev>
 - pip install --upgrade pip
 - pip install mcp volatility3 yara-python
@@ -67,9 +67,9 @@ You must see:
 -mcp
 -veryify with this command (C:\volatility-mcp\venv\Scripts\vol.exe -h)
 
-6️⃣ Add Your Memory Dump at specific location
+- 6️⃣ Add Your Memory Dump at specific location
 
-7️⃣ Configure Claude Desktop MCP
+- 7️⃣ Configure Claude Desktop MCP
 - location of .json file
 - in my case it is : C:\Users\nameofuser\AppData\Roaming\Claude\claude_desktop_config.json
 - update the json file with follwing code
@@ -86,24 +86,20 @@ You must see:
 }
 Save → Restart Claude Desktop.
 close it and restart your PC/Laptop 
-8️⃣ Open CMD
+
+- 8️⃣ Open CMD
 First start the server.py file
 C:\Volatility_MCP\python server.py
-9️⃣
-Open claude desktop application and wait for few seconds 
+
+- 9️⃣ Open claude desktop application and wait for few seconds 
 opne file-> Settings-> developer (If everything is ok -> You can see volatility server is running)
-🔟
-open chat and start process for memory annlysis
 
-best prompt : 
+- 🔟 open chat and start process for memory annlysis: best prompt : 
 
-Run windows.info and windows.pslist on the memory dump located at C:\Volatility_MCP\memdump.mem
-
-Run windows.pstree, windows.cmdline, and windows.psscan on C:\Volatility_MCP\memdump.mem
-
-Run windows.malfind on C:\Volatility_MCP\memdump.mem
-
-Run windows.dlllist on C:\Volatility_MCP\memdump.mem
+- Run windows.info and windows.pslist on the memory dump located at C:\Volatility_MCP\memdump.mem
+- Run windows.pstree, windows.cmdline, and windows.psscan on C:\Volatility_MCP\memdump.mem
+- Run windows.malfind on C:\Volatility_MCP\memdump.mem
+- Run windows.dlllist on C:\Volatility_MCP\memdump.mem
 
 
 
