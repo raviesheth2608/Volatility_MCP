@@ -81,7 +81,7 @@ git --version
 
 ```cmd
 cd C:\
-git clone https://github.com/YOURNAME/volatility-mcp.git
+git clone https://github.com/raviesheth2608/Volatility_MCP.git
 cd volatility-mcp
 ```
 
