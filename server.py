@@ -4,6 +4,7 @@ import sys
 import threading
 import uuid
 
+
 # -------------------------------------------------
 # MCP requires STDOUT to be JSON ONLY.
 # All logs must go to STDERR.
@@ -12,7 +13,7 @@ import uuid
 def log(msg):
     print(msg, file=sys.stderr, flush=True)
 
-log("Starting Volatility MCP (Job Engine Mode)")
+log("Starting Volatility MCP (Job Engine Mode)@ Ravi Sheth")
 
 mcp = FastMCP("Volatility 3 MCP Server – DFIR Job Engine")
 
@@ -148,7 +149,7 @@ def start_callbacks(memory_path: str):
 def start_yarascan(memory_path: str, yara_rule_path: str):
     return submit(
         memory_path,
-        "windows.yarascan",
+        "yarascan.YaraScan",
         ["--yara-file", yara_rule_path]
     )
 
